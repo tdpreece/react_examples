@@ -1,8 +1,10 @@
+const path = require('path');
+
 var config ={
-  context: __dirname + '/src',
+  context: path.join(__dirname, 'src'),
   entry: "./index",
   output: {
-      path: __dirname + '/www',
+      path: path.join(__dirname, 'www'),
       filename: "bundle.js"
   },
   module: {
@@ -12,7 +14,7 @@ var config ={
         test: /\.jsx?$/,
         exclude: /node_modules/,
         include: [
-          __dirname + "/src",
+          path.join(__dirname, 'src'),
         ],
         query: {
           presets: ['react', 'es2015'],
